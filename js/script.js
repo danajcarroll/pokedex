@@ -1,3 +1,6 @@
+const pokedex = document.getElementById("pokedex");
+console.log(pokedex);
+
 // Using fetch api to get information about the pokemon
 const fetchPokemon = () => {
 // empty array of promises
@@ -22,6 +25,16 @@ Promise.all(promises).then((results) => {
 
 const displayPokemon = (pokemon) => {
     console.log(pokemon);
-}
+    const pokemonHTMLString = pokemon.map( pokeman => `
+    <li class="card">
+        <h3 card="cardID" >${pokeman.id}</h3>
+        <img card="cardImage" src="${pokeman.image}"/>
+        <h2card="cardName" >${pokeman.name}</h2card=>
+        <pcard="cardType" >Type: ${pokeman.type}</pcard=>
+    </li>
+    `
+    ).join("");
+    pokedex.innerHTML = pokemonHTMLString;
+};
 
 fetchPokemon();
