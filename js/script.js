@@ -27,10 +27,14 @@ const displayPokemon = (pokemon) => {
     console.log(pokemon);
     const pokemonHTMLString = pokemon.map( pokeman => `
     <li class="card">
-        <h3 card="cardID" >${pokeman.id}</h3>
-        <img card="cardImage" src="${pokeman.image}"/>
-        <h2card="cardName" >${pokeman.name}</h2card=>
-        <pcard="cardType" >Type: ${pokeman.type}</pcard=>
+        <div class="cardInfo">
+            <h3 class="cardID" >${pokeman.id}</h3>
+            <h2 class="cardName" >${pokeman.name}</h2>
+        </div>
+        <div class="cardImageType">
+        <p class="cardType" >Type: ${pokeman.type}</p>
+        <img class="cardImage" src="${pokeman.image}"/>
+        </div>
     </li>
     `
     ).join("");
